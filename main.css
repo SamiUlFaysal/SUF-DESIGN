@@ -1,0 +1,361 @@
+*{margin: 0%;padding: 0%;}
+/*---- TYPOGRAPHY--- */
+body{font-family: lato;}
+aside{margin-top: 5rem;}
+h3{font-weight: bold;}
+a{text-decoration: none;}
+p{color: #606060;overflow: hidden;font-family: lato;}
+img{width: 100%;}
+.floatright{float: right;}
+li{list-style-type:none;}
+#emon:hover{color: crimson;cursor: pointer;}
+/* *****HEADER SEC******* */
+.header{background-color: #282b2d !important;}
+
+ul li.active a{
+    color: #58c93a;
+    border-bottom:5px solid #58c93a;
+}
+/* *********NAV SEC********* */
+#logo{
+	display: inline-block;
+}
+#logo h1{
+	margin-top: 63px;
+}
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #282b2d !important;
+}
+
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #282b2d !important;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:70px 27px;	
+	color:#FFF;
+	font-size:21px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	transition: 0.2s ;
+    color: #58c93a;
+    border-bottom:5px solid #58c93a;
+	background-color: #000000;
+	text-decoration:none;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+/* *********NAV SEC********* */
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle img{height: 40px;width: 40px;margin-right: 10px;}
+	.toggle {
+		display: block;
+		
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:21px;
+		text-decoration:none;
+		
+	}
+
+	.toggle:hover {
+		color: #58c93a;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+
+
+/*---- HEAD--- */
+
+/*---- ARTICLE--- */
+.bdr5px{
+    border-top: 5px solid #1E1E1E;
+    margin-top: -5px;
+}
+article h2{
+    color: #4f4e4e;
+    font-family: lato;
+    padding: 0px 0px 12px 13px;
+    border-left: 2px solid #343a40;
+    margin-top: 44px;
+}
+article a{
+    border: 1px solid #b2ccb1;
+    padding: 7px;
+    border-radius: 18px;
+    margin-bottom: 27px;
+    text-align: center;
+    color: #b2ccb1;
+    display: inline-block;
+    width: 12rem;
+}
+article a:hover{
+    text-decoration: none;
+    color: #b2ccb1;
+
+}
+article img{
+    margin-top: 5rem;
+}
+/*---- INPUT SIDE--- */
+.col-4 h4{
+    border-left: 2px solid #58c93a;
+    font-family: lato;
+    padding: 0px 2px 4px 13px;
+    margin: 37px 3px 14px 0px;
+}
+.submit{
+    width: 76px;
+}
+
+#searchsubmit{
+    border: 1px solid #b2ccb1;
+    padding: 0.7rem;
+    width: 18rem;
+}
+#submit{
+    background: url(img/search_icon.png) no-repeat;
+    border: none;
+    width: 2rem;
+    margin-left: -2.5rem;
+    cursor: pointer;
+}
+.nlist{
+    
+    font-family: lato;
+}
+.nlist ul{
+    padding-left: 2rem;
+    
+}
+.nlist ul li{
+    padding-top:2rem;
+    list-style-type:georgian;
+    font-size: larger;
+    color: #4f4e4e;
+}
+.pre-box{
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+
+}
+.pre{
+
+    font-size: 20px;
+    font-family: lato;
+    color: #4f4e4e;
+}
+.nxt{
+    float: right;
+    font-size: 20px;
+    
+    color: #4f4e4e;
+}
+
+
+/*****FOOTER SECTION*****/
+.footerborder{
+    border-top: 1px solid #dee2e6;
+    margin-top: -1px;
+}
+.hole-footer-wrap{
+    margin-top: 5rem;
+}
+.social_share{
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+}
+.social_share ul li{padding: 0px 50px 0px 24px;}
+.footerimg1 {
+    background: url(img/fb1.png) no-repeat;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+.footerimg1:hover{
+    background: url(img/fb.png) no-repeat;
+}
+.footerimg2{
+    background: url(img/tw.png) no-repeat;
+    height: 40px;
+    width: 40px;
+    display: inline-block;}
+.footerimg2:hover{
+    background: url(img/tw1.png) no-repeat;
+}
+/***** FOOTER-END *****/
